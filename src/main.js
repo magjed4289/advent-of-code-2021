@@ -8,12 +8,12 @@ function counter() {
   }, 1000);
 }
 
-function countIncreases(arr, n) {
+function countIncreases(someArray, someNumber) {
   var increasesNumber = [];
-  var lenght;
-  for (var i = 1; i < n - 1; i++) {
-    if (arr[i] > arr[i - 1])
-      increasesNumber.push(arr[i]);
+  //var lenght;
+  for (var i = 1; i < someNumber - 1; i++) {
+    if (someArray[i] > someArray[i - 1])
+      increasesNumber.push(someArray[i]);
   }
    document.write(increasesNumber.length);
 
@@ -24,3 +24,22 @@ var n = arr.length;
 
 counter();
 countIncreases(arr,n);
+
+const arrSum = [];
+
+function groupIncreases(arr) {
+  var n = arr.length;
+  var sum=0;
+  for(var j=0; j<4;j++){
+    for(var i=0+j; i<n-2;i++){
+      sum = arr[i] + arr[i+1] + arr[i+2];
+      arrSum.push(sum);
+    }
+  }
+  document.write(" "+arrSum);
+  return arrSum;
+}
+
+const myArray = groupIncreases(arr);
+var lenghtOfTheArray = myArray.length;
+countIncreases(myArray,lenghtOfTheArray);
