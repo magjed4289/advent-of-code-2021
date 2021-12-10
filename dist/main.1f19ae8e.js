@@ -2202,22 +2202,27 @@ function groupMovements(arr) {
 
       switch (key) {
         case "up":
-          depth = depth - Number(value);
+          //depth = depth-Number(value);
           aim = aim - Number(value);
-          console.log(" Aim has decreased " + aim);
+          console.log("Aim decreases by " + value + " so it's " + aim + " now.");
           break;
 
         case "down":
-          depth = depth + Number(value);
+          //depth = depth+Number(value);
           aim = aim + Number(value);
+          console.log("Aim increases by " + value + " so it's " + aim + " now.");
           console.log(depth);
           break;
 
         case "forward":
           horizontal = horizontal + Number(value);
+          console.log("Horizontal in total " + horizontal);
 
           if (aim != 0) {
-            depth = value * aim;
+            console.log("Value " + value);
+            console.log("Aim " + aim);
+            console.log("Depth " + depth);
+            depth = value * aim + depth;
             console.log(" depth after aim has increased " + depth);
           }
 
@@ -2232,9 +2237,45 @@ function groupMovements(arr) {
 
   console.log("HORIZONTAL " + horizontal);
   console.log("DEPTH " + depth);
+} //groupMovements(arrDirections1);
+
+
+var input1 = [[0, 0, 1, 0, 0], [1, 1, 1, 1, 0], [1, 0, 1, 1, 0], [1, 0, 1, 1, 1], [1, 0, 1, 0, 1], [0, 1, 1, 1, 1], [0, 0, 1, 1, 1], [1, 1, 1, 0, 0], [1, 0, 0, 0, 0], [1, 1, 0, 0, 1], [0, 0, 0, 1, 0], [0, 1, 0, 1, 0]];
+var powerConsumption = gammaRate * epsilonRate;
+var gammaRate = [];
+var epsilonRate = [];
+
+function findTheGamma(input) {
+  console.log("Am I inside?");
+  var ones = 0;
+  var zeros = 0;
+  console.log("input lenght " + input.length);
+
+  for (var i = 0; i < input.length; i++) {
+    var obj = input[i];
+    console.log("An input " + obj); //console.log("Am I inside level 2?");
+    //  var obj = input[i];
+    //  for(var i = 0; i < obj.length; i++){
+    //      if(obj[i]==0){
+    //          zeros++;
+    //      }
+    //      else {
+    //          ones++;
+    //      }
+    //  }
+    //  if(ones>zeros){
+    //      gammaRate.push[0];
+    //  }
+    //  else{
+    //      gammaRate.push[1];
+    //  }
+  }
+
+  console.log(gammaRate);
+  return gammaRate;
 }
 
-groupMovements(arrDirections);
+findTheGamma(input1);
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2263,7 +2304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54728" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55048" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
